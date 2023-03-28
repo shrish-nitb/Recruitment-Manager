@@ -452,18 +452,7 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 .form-input-1 select{
-	/* width: 28vw;
-	height: 93.45px;
-	margin-left: 2vw;
-	background: #F5F5F5;
-	border-radius: 5px;
-	border: none;
-	font-family: 'Poppins';
-	font-style: italic;
-	font-weight: 400;
-	font-size: 16px;
-	line-height: 24px;
-	color: #373636; */
+	
 	font-family: 'Poppins';
     font-style: normal;
     font-weight: 400;
@@ -482,6 +471,8 @@ input[type=number] {
     padding-left: 1rem;
     align-self: center;
     height: 3rem;
+	-webkit-appearance: none;
+	-moz-appearance: none;
   }input-name
   option{
 	font-family: 'Poppins';
@@ -880,11 +871,17 @@ margin-top: 0;
 		margin-left: 15vw;
 		padding-left: 0;
 	}
+	.form-input-1 select{
+		width: 70vw;
+	}
 }
 @media (max-width:500px)and (min-width:300px){
 	.form-hr{
 		width: 70vw;
 		height: 1.5px;
+	}
+	.form-input-1 select{
+		width: 70vw;
 	}
 	.large-header{
 		flex-direction: column;
