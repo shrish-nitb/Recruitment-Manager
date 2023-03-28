@@ -1,5 +1,5 @@
 // my next birthday
-const newDate = new Date('sep 12 23 23:59:59').getTime()
+const newDate = new Date('apr 4 23 23:59:59').getTime()
 const countdown = setInterval(() =>{
   
 const date = new Date().getTime()
@@ -18,7 +18,7 @@ const seconds = Math.floor((diff % (1000 * 60)) / 1000)
    
 if(diff === 0){
   clearInterval(countdown)
-        document.querySelector(".countdown").innerHTML = 'Happy Birthday Ahmed'
+        document.querySelector(".countdown").innerHTML = 'Registration Closed'
 }
 
 }, 1000)
