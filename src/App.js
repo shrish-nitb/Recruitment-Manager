@@ -102,31 +102,14 @@ function App() {
         >
           <div className="home">
             <p className="main-head main-title">
-              <span
-                style={{
-                  fontFamily: "Poppins",
-                  fontStyle: "normal",
-                  fontWeight: 700,
-                  fontSize: "4.7241rem",
-                  lineHeight: "7.0625rem",
-                  letterSpacing: "0.06em",
-                  color: "#FFFFFF",
-                }}
+              <span className="main-head-span-1"
+             
               >
                 WE ARE
               </span>
               <br />
-              <span
-                style={{
-                  fontFamily: "Poppins",
-                  fontStyle: "normal",
-                  fontWeight: 800,
-                  fontSize: "6.7488rem",
-                  display: "inline-block",
-                  marginTop: "-1.5625rem",
-                  letterSpacing: "0.06em",
-                  color: "#FA43FF",
-                }}
+              <span className="main-head-span-2"
+              
               >
                 RECRUITING!
               </span>
@@ -183,9 +166,9 @@ function App() {
         {/*timeline*/}
             <h3 className="proposal-title" style={{color:"White",marginBottom:"0px"}}>Timeline </h3>
             
-        <VerticalTimeline >
-          <VerticalTimelineElement
-            className="vertical-timeline-element--work"
+        <VerticalTimeline className="vertical-timeline" >
+          <VerticalTimelineElement 
+            className="vertical-timeline-element--work "
             contentStyle={{ background: "#fff", color: "white", boxShadow:"0 3px 0 #2196f3" }}
             contentArrowStyle={{ borderRight: "7px solid #fff" }}
             date="2011 - present"
@@ -533,7 +516,7 @@ function App() {
         </section>
         <section id="section-6">
           <p className="heading faq-head" style={{ color: "#FFFFFF" }}>
-            Rules And Regulations
+            Rules And <span style={{color:"#EDA177"}}>Regulations</span>
           </p>
           <div className="faq">
             <p className="ans">

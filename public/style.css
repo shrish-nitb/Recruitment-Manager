@@ -13,6 +13,22 @@
 
 /* navbar start */
 
+.vertical-timeline{
+    font-size: 16px;
+   margin-bottom: 7em !important;
+}
+
+@media (min-width:300px) and (max-width:900px){
+    .vertical-timeline-element-content .vertical-timeline-element-date, .vertical-timeline-element-content p {
+        
+        font-size: .8125em !important;
+        font-weight: 500 !important;
+    }
+    .vertical-timeline{
+ 
+       margin-bottom: 5em !important;
+    }
+}
 
 * {
     margin: 0;

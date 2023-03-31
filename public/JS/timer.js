@@ -1,4 +1,4 @@
-// my next birthday
+
 const newDate = new Date('apr 4 23 23:59:59').getTime()
 const countdown = setInterval(() =>{
   
