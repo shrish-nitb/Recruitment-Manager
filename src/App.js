@@ -14,15 +14,18 @@ import Select, { SelectChangeEvent } from "@mui/material/Select";
 import InputAdornment from "@mui/material/InputAdornment";
 import OutlinedInput from "@mui/material/OutlinedInput";
 import LoadingButton from "@mui/lab/LoadingButton";
-import { ThemeProvider, createTheme, withTheme } from '@mui/material/styles';
-import CssBaseline from '@mui/material/CssBaseline';
-import 'animate.css';
+import { ThemeProvider, createTheme, withTheme } from "@mui/material/styles";
+import CssBaseline from "@mui/material/CssBaseline";
+import Typography from '@mui/material/Typography';
+
+import "animate.css";
 
 const darkTheme = createTheme({
   palette: {
-    mode: 'dark',
+    mode: "dark",
   },
 });
+
 
 
 function App() {
@@ -58,35 +61,34 @@ function App() {
     <ThemeProvider theme={darkTheme}>
       <CssBaseline />
       <div>
-        <nav style={{ opacity: 1 }}>
+        <nav style={{opacity:1,background: "rgba(217, 217, 217, 0.03)",
+    boxShadow: "0px 4px 25px rgba(0, 0, 0, 0.1)"}}>
           <a href="https://www.ecellnitb.com">
             <img className="logo" id="logo-1" src="Images/logo.png" />
           </a>
           <ul className="nav nav-items" style={{ textTransform: "uppercase" }}>
             <li className="nav-link">
-              <a onclick="closeNav()" href="#large-header">
+              <a  href="#large-header">
                 home
               </a>
             </li>
             <li className="nav-link">
-              <a onclick="closeNav()" href="#section-2">
+              <a  href="#section-2">
                 About Us
               </a>
             </li>
             <li className="nav-link">
-              <a onclick="closeNav()" href="#section-5">
+              <a  href="#section-5">
                 Timeline
               </a>
             </li>
             <li className="nav-link">
-              <a onclick="closeNav()" href="#section-4">
+              <a  href="#section-4">
                 Verticals
               </a>
             </li>
             <li className="nav-link">
-              <a onclick="closeNav()" href="#section-6">
-                Register Now
-              </a>
+              <a href="#section-form">Register Now</a>
             </li>
           </ul>
           <div className="burger">
@@ -102,14 +104,30 @@ function App() {
         >
           <div className="home">
             <p className="main-head main-title">
-              <span className="main-head-span-1"
-             
+              <span
+                style={{
+                  fontFamily: "Poppins",
+                  fontStyle: "normal",
+                  fontWeight: 700,
+                  fontSize: "4.7241em",
+                  letterSpacing: "0.06em",
+                  color: "#FFFFFF",
+                }}
               >
                 WE ARE
               </span>
               <br />
-              <span className="main-head-span-2"
-              
+              <span
+                style={{
+                  fontFamily: "Poppins",
+                  fontStyle: "normal",
+                  fontWeight: 800,
+                  fontSize: "6.7488em",
+                  display: "inline-block",
+                  marginTop: "-1.5625em",
+                  letterSpacing: "0.06em",
+                  color: "#FA43FF",
+                }}
               >
                 RECRUITING!
               </span>
@@ -137,12 +155,12 @@ function App() {
                 <span style={{ color: "white" }}>Seconds</span>
               </div>
             </div>
-            <a href="#section-3">
+            <a href="#section-form">
               <button className="about-btn">Register Now</button>
             </a>
           </div>
         </section>
-        <section id="section-2" style={{background:"white"}}>
+        <section id="section-2" style={{ background: "white" }}>
           <div className="about">
             <p className="about-head heading ">
               About <span style={{ color: "#EDA177" }}> E-Cell NIT Bhopal</span>
@@ -157,109 +175,145 @@ function App() {
               and sessions from experts in respective fields that have laid out
               the foundation for moulding the burgeoning entrepreneurial minds.
             </p>
-            <a href="#section-3">
-              <button className="about-btn">Join Us</button>
+            <a href="#section-form">
+              <button
+                className="about-btn-2"
+                style={{ color: "#eda177", border: "0.125em solid #e59b73" }}
+              >
+                Join Us
+              </button>
             </a>
           </div>
         </section>
         {/*timeline and vertical*/}
         {/*timeline*/}
-            <h3 className="proposal-title" style={{color:"White",marginBottom:"0px"}}>Timeline </h3>
-            
-        <VerticalTimeline className="vertical-timeline" >
-          <VerticalTimelineElement 
+        <section id="section-5">
+        <h3
+          className="proposal-title"
+          style={{ color: "White", marginBottom: "0px" }}
+        >
+          Timeline{" "}
+        </h3>
+
+        <VerticalTimeline className="vertical-timeline">
+          <VerticalTimelineElement
             className="vertical-timeline-element--work "
-            contentStyle={{ background: "#fff", color: "white", boxShadow:"0 3px 0 #2196f3" }}
+            contentStyle={{
+              background: "#fff",
+              color: "white",
+              boxShadow: "0 3px 0 #2196f3",
+              textAlign:"left"
+            }}
             contentArrowStyle={{ borderRight: "7px solid #fff" }}
             date="2011 - present"
-            iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-            
+  
+            iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
           >
-            <div style={{color:"rgb(48 48 48)"}}>
-            <h3 className="vertical-timeline-element-title">
-              Creative Director
-            </h3>
-            <h4 className="vertical-timeline-element-subtitle">Miami, FL</h4>
-            <p>
-              Creative Direction, User Experience, Visual Design, Project
-              Management, Team Leading
-            </p></div>
+            <div style={{ color: "rgb(48 48 48)" }}>
+              <h3 className="vertical-timeline-element-title">
+                Creative Director
+              </h3>
+              <h4 className="vertical-timeline-element-subtitle">Miami, FL</h4>
+              <p>
+                Creative Direction, User Experience, Visual Design, Project
+                Management, Team Leading
+              </p>
+            </div>
           </VerticalTimelineElement>
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
-            contentStyle={{ background: "#fff", color: "white", boxShadow:"0 3px 0 #2196f3" }}
+            contentStyle={{
+              background: "#fff",
+              color: "white",
+              boxShadow: "0 3px 0 #2196f3",
+              textAlign:"left"
+            }}
             contentArrowStyle={{ borderRight: "7px solid #fff" }}
             date="2011 - present"
-            iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-            
+            iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
           >
-            <div style={{color:"rgb(48 48 48)"}}>
-            <h3 className="vertical-timeline-element-title">
-              Creative Director
-            </h3>
-            <h4 className="vertical-timeline-element-subtitle">Miami, FL</h4>
-            <p>
-              Creative Direction, User Experience, Visual Design, Project
-              Management, Team Leading
-            </p></div>
+            <div style={{ color: "rgb(48 48 48)" }}>
+              <h3 className="vertical-timeline-element-title">
+                Creative Director
+              </h3>
+              <h4 className="vertical-timeline-element-subtitle">Miami, FL</h4>
+              <p>
+                Creative Direction, User Experience, Visual Design, Project
+                Management, Team Leading
+              </p>
+            </div>
           </VerticalTimelineElement>
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
-            contentStyle={{ background: "#fff", color: "white", boxShadow:"0 3px 0 #2196f3" }}
+            contentStyle={{
+              background: "#fff",
+              color: "white",
+              boxShadow: "0 3px 0 #2196f3",
+              textAlign:"left"
+            }}
             contentArrowStyle={{ borderRight: "7px solid #fff" }}
             date="2011 - present"
-            iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-            
+            iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
           >
-            <div style={{color:"rgb(48 48 48)"}}>
-            <h3 className="vertical-timeline-element-title">
-              Creative Director
-            </h3>
-            <h4 className="vertical-timeline-element-subtitle">Miami, FL</h4>
-            <p>
-              Creative Direction, User Experience, Visual Design, Project
-              Management, Team Leading
-            </p></div>
+            <div style={{ color: "rgb(48 48 48)" }}>
+              <h3 className="vertical-timeline-element-title">
+                Creative Director
+              </h3>
+              <h4 className="vertical-timeline-element-subtitle">Miami, FL</h4>
+              <p>
+                Creative Direction, User Experience, Visual Design, Project
+                Management, Team Leading
+              </p>
+            </div>
           </VerticalTimelineElement>
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
-            contentStyle={{ background: "#fff", color: "white", boxShadow:"0 3px 0 #2196f3" }}
+            contentStyle={{
+              background: "#fff",
+              color: "white",
+              boxShadow: "0 3px 0 #2196f3",
+              textAlign:"left"
+            }}
             contentArrowStyle={{ borderRight: "7px solid #fff" }}
             date="2011 - present"
-            iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-            
+            iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
           >
-            <div style={{color:"rgb(48 48 48)"}}>
-            <h3 className="vertical-timeline-element-title">
-              Creative Director
-            </h3>
-            <h4 className="vertical-timeline-element-subtitle">Miami, FL</h4>
-            <p>
-              Creative Direction, User Experience, Visual Design, Project
-              Management, Team Leading
-            </p></div>
+            <div style={{ color: "rgb(48 48 48)" }}>
+              <h3 className="vertical-timeline-element-title">
+                Creative Director
+              </h3>
+              <h4 className="vertical-timeline-element-subtitle">Miami, FL</h4>
+              <p>
+                Creative Direction, User Experience, Visual Design, Project
+                Management, Team Leading
+              </p>
+            </div>
           </VerticalTimelineElement>
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
-            contentStyle={{ background: "#fff", color: "white", boxShadow:"0 3px 0 #2196f3" }}
+            contentStyle={{
+              background: "#fff",
+              color: "white",
+              boxShadow: "0 3px 0 #2196f3",
+              textAlign:"left"
+            }}
             contentArrowStyle={{ borderRight: "7px solid #fff" }}
             date="2011 - present"
-            iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-            
+            iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
           >
-            <div style={{color:"rgb(48 48 48)"}}>
-            <h3 className="vertical-timeline-element-title">
-              Creative Director
-            </h3>
-            <h4 className="vertical-timeline-element-subtitle">Miami, FL</h4>
-            <p>
-              Creative Direction, User Experience, Visual Design, Project
-              Management, Team Leading
-            </p></div>
-          </VerticalTimelineElement>        
-          
+            <div style={{ color: "rgb(48 48 48)" }}>
+              <h3 className="vertical-timeline-element-title">
+                Creative Director
+              </h3>
+              <h4 className="vertical-timeline-element-subtitle">Miami, FL</h4>
+              <p>
+                Creative Direction, User Experience, Visual Design, Project
+                Management, Team Leading
+              </p>
+            </div>
+          </VerticalTimelineElement>
         </VerticalTimeline>
-        
+        </section>
         <section id="section-4" style={{ width: "100vw" }}>
           <div className="proposal">
             <h3 className="proposal-title">Verticals </h3>
@@ -339,25 +393,62 @@ function App() {
           </div>
         </section>
         {/* Registration form */}
-        <section>
-          <Grid container sx={{ my: 10, px:20 }}>
-            <Grid item xs={12} md={6} >
-              <Box sx={{my:20}} style={{backgroundImage: 'url(man.png)', backgroundPosition: 'left center', backgroundRepeat: 'no-repeat', backgroundSize: 'contain', height:"70vh"}}>
-
-              </Box>
-            </Grid>
-            <Grid item xs={12} md={6}>
+        <section id="section-form">
+          <Grid
+            sx={{ justifyContent: { xs: "center", lg: "left" }, pb:{xs:"3em",sm:"2em",md:"2em"}}}
+            container
+            style={{ marginTop: "4rem" }}
+          >
+            <Grid item xs={0} lg={6}>
               <Box
+                sx={{ my: 20 }}
+                style={{
+                  backgroundImage: "url(man.png)",
+                  backgroundPosition: "center",
+                  backgroundRepeat: "no-repeat",
+                  backgroundSize: "contain",
+                  height: "70vh",
+                }}
+              ></Box>
+            </Grid>
+            <Grid item xs={10} sm={9} md={8} lg={5}>
+              <Box
+                id="rnform"
                 component="form"
                 sx={{
-                  "& > :not(style)": { m: 1, width: "100%" },
+                  "& > :not(style)": { m: 1, width: "95%" },
                 }}
-                style={{textAlign:"center"}}
+                style={{ textAlign: "center" }}
               >
-                <div sx={{my:3}} > <span style={{fontFamily: '"Poppins"', fontStyle: 'normal', fontWeight: 800, fontSize: '4.0971rem', lineHeight: '6.125rem', letterSpacing: '0.06em', color: '#FA43FF', display:"inline-block", marginRight:"1.25rem"}}>Register</span>
-                
-                <span style={{fontFamily: '"Poppins"', fontStyle: 'normal', fontWeight: 700, fontSize: '4.0971rem', lineHeight: '6.125rem', color: 'white'}}>Now</span></div>
-                
+                <Box id="rnhead" sx={{ my: 3 }}>
+                  {" "}
+                  <span
+                    style={{
+                      fontFamily: '"Poppins"',
+                      fontStyle: "normal",
+                      fontWeight: 800,
+                      fontSize: "4.0971em",
+                      letterSpacing: "0.06em",
+                      color: "#FA43FF",
+                      display: "inline-block",
+                      marginRight: "0.25em",
+                    }}
+                  >
+                    Register
+                  </span>
+                  <span
+                    style={{
+                      fontFamily: '"Poppins"',
+                      fontStyle: "normal",
+                      fontWeight: 700,
+                      fontSize: "4.0971em",
+                      color: "white",
+                    }}
+                  >
+                    Now
+                  </span>
+                </Box>
+
                 <FormControl variant="outlined">
                   <InputLabel htmlFor="fullnameInput">Fullname</InputLabel>
                   <OutlinedInput
@@ -507,8 +598,20 @@ function App() {
                     <MenuItem value={"K"}>K</MenuItem>
                   </Select>
                 </FormControl>
-                <LoadingButton variant="outlined" sx={{ p: 2 }}>
-                  REGISTER
+                <Typography variant="subtitle2" display="block" sx={{textAlign:"left",px:2}} style={{color:"#f5f5f5d6"}} gutterBottom>
+                  By Clicking Apply you agree to our Terms and Conditions
+                </Typography>
+
+                <LoadingButton
+                  variant="outlined"
+                  style={{
+                    borderColor: "#fff",
+                    color: "white",
+                    marginTop: "2rem",
+                  }}
+                  sx={{p:2,fontSize:{xs:"0.8rem",lg:"1.1rem"}}}
+                >
+                  APPLY
                 </LoadingButton>
               </Box>
             </Grid>
@@ -516,7 +619,7 @@ function App() {
         </section>
         <section id="section-6">
           <p className="heading faq-head" style={{ color: "#FFFFFF" }}>
-            Rules And <span style={{color:"#EDA177"}}>Regulations</span>
+            Rules And <span style={{ color: "#EDA177" }}>Regulations</span>
           </p>
           <div className="faq">
             <p className="ans">
@@ -545,8 +648,8 @@ function App() {
               round.
             </p>
             <p className="ans">
-              Any form of plagiarism or use of unfair means in any stage of
-              the recruitment shall lead to immediate disqualification of a
+              Any form of plagiarism or use of unfair means in any stage of the
+              recruitment shall lead to immediate disqualification of a
               candidate.
             </p>
             <p className="ans">
@@ -625,8 +728,10 @@ function App() {
           </div>
         </section>
       </div>
-      </ThemeProvider>
+    </ThemeProvider>
   );
 }
+
+
 
 export default App;

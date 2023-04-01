@@ -62,14 +62,15 @@ nav {
   font-size: 19px;
   padding-right: 54px;
   margin-top: 45px;
+  gap: 1.5em;
 }
 
 .nav-link {
   text-decoration: none;
   color: rgb(226, 226, 226);
   list-style: none;
-  /* margin-left: 10px; */
-  padding-left: 10px;
+  margin-left: 10px;
+  padding-left: 32px;
   padding-right: 20px;
   padding-top: 10px;
   font-weight: 500;
@@ -151,14 +152,14 @@ li a :hover{
 
   .nav-link {
     /* opacity: 0; */
-    margin-left: 54px;
+    /* margin-left: 54px; */
   }
 
   .burger {
     display: block;
     position: fixed;
     right: 0px;
-    top: 25px;
+    top: 21px;
     margin-right: 23px;
     z-index: 1001;
   }

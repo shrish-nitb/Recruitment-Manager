@@ -1,4 +1,4 @@
-/* Header */
+]/* Header */
 
 @import url('https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700;800&display=swap');
 
@@ -16,16 +16,16 @@ body{
 	text-align: center;
 	display: flex;
 	flex-direction: column;
-	padding-top: 12%;
-	height: 100vh !important;
+	padding-top: 10%;
+	min-height: 100vh !important;
 	padding-bottom: 13%;
-	padding-left: 122px;
+	/* padding-left: 7.625em; */
 }
 .home{
 	text-align: left;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }
 
 #large-header {
@@ -37,73 +37,55 @@ body{
 	text-align: center;
 	background-attachment: fixed;
 	background-size: cover;
+	font-size: 16px;
+	display: flex;
+	background-position: center;
+	justify-content: center;
+	padding: 10vw;
 }
-.main-title {
-
-
-	text-align: left;
-   font-family: 'Poppins';
-font-style: normal;
-font-weight: 600;
-font-size: 5.375rem;
-line-height: 7.625rem;
-
-letter-spacing: 0.025em;
-
-color:  #EDA177;
-
-}
+.main-title {text-align: left;font-family: 'Poppins';font-style: normal;font-weight: 600;line-height: 7.625em;letter-spacing: 0.025em;color:  #EDA177;}
 .main-sub-head{
- 
-
-	text-align:left;
-   font-family: 'Poppins';
-font-style: normal;
-font-weight: 400;
-font-size: 1.586rem;
-line-height: 2.375rem;
-letter-spacing: 0.02em;
-color:  #FFFFFF;
-
+ text-align:left;
+ font-family: 'Poppins';
+ font-style: normal;
+ font-weight: 400;
+ font-size: 1.586em;
+ line-height: 1.375em;
+ letter-spacing: 0.02em;
+ color:  #FFFFFF;
 }
 
 .about{
    text-align: center;
-   padding: 6.5rem ;
+   padding: 6.5em;
 }
 .heading{
    font-family: 'Poppins';
-font-style: normal;
-font-weight: 600;
-font-size: 2.8125rem;
-line-height: 4.25rem;
+   font-style: normal;
+   font-weight: 600;
+   font-size: 2.8125em;
+   line-height: 1.5em;
 /* identical to box height */
-
-
-color: #121212;
-
+   color: #121212;
 }
 .about-text{
 	font-family: 'Poppins';
 	font-style: normal;
 	font-weight: 400;
-	font-size: 1.375rem;
+	font-size: 1.375em;
 	line-height: 190%;
-    margin: 3.125rem 0;
-
+	margin: 1.125em 0;
 	text-align: justify;
 	letter-spacing: 0.04em;
-
 	color: #898989;
-
 }
 .about-btn{
 	text-align: center;
 	cursor: pointer;
 	background-color: transparent;
 	color: white;
-	width: 11.6425rem;
-	height: 3.3994rem;
+	width: 11.6425em;
+	height: 3.3994em;
 	left: 6.3125rem;
 	top: 40rem;
 	border: 0.125rem solid #FFFFFF;
@@ -111,12 +93,31 @@ color: #121212;
 	font-family: 'Poppins';
 	font-style: normal;
 	font-weight: 600;
-	font-size: 1.1025rem;
-	line-height: 1.625rem;
+	font-size: 1.1025em;
+	line-height: 1.625em;
 	letter-spacing: 0.06em;
 	color: #FFFFFF;
 }
 .about-btn:hover{/* background-color: #EDA177; */color: #ffffff;background: #FA43FF;border: none;transition: all 0.5s ease;}
+.about-btn-2{
+	text-align: center;
+	cursor: pointer;
+	background-color: transparent;
+	color: white;
+	width: 11.6425em;
+	height: 3.3994em;
+	left: 6.3125rem;
+	top: 40rem;
+	border: 0.125rem solid #FFFFFF;
+	border-radius: 0.3924em;
+	font-family: 'Poppins';
+	font-style: normal;
+	font-weight: 600;
+	font-size: 1.1025em;
+	line-height: 1.625em;
+	letter-spacing: 0.06em;
+	color: #FFFFFF;
+}
 #section-3{
 	/* height: 100vh; */
 	background-image: radial-gradient( circle, rgba(  0, 0, 0, 0 ) 0%, rgba( 0, 0, 0, 0.8 ) 100% );
@@ -261,11 +262,11 @@ color: #989898;
 
 #section-6{
 	background: #1a1a1a;
-	padding: 8.75rem 0;
+	padding: 5.75em 0;
 	text-align: center;
 }
 .faq{
-	padding: 0px 7.625rem;
+	padding: 0px 7.625em;
 	text-align: left;
 }
 .quest{
@@ -285,27 +286,21 @@ color: #EDA177;
 	font-family: 'Poppins';
 	font-style: normal;
 	font-weight: 300;
-	font-size: 1.1875rem;
-	line-height: 2.0625rem;
+	font-size: 1.1875em;
+	line-height: 2.0625em;
 	text-align: justify;
 	margin-top: 1.2rem;
 	/* margin-bottom: 4rem; */
 	color: #FFFFFF;
 }
 .faq-head{
-	margin-bottom: 4rem;
+	margin-bottom: 0em;
 }
 #section-7{
 	background: #121212;
 	text-align: center;
 }
-.footer-hr{
-height: 3px;
-width: 90vw;
-margin: auto;
-margin-bottom: 6.25rem;
-background-color: #ffffff;
-}
+.footer-hr{height: 3px;width: 90vw;margin: auto;margin-bottom: 6.25rem;background-color: transparent;border: none;}
 .foot-head{
 	font-family: 'Poppins';
 font-style: normal;
@@ -436,7 +431,7 @@ margin-top: 5rem;
 		font-size: 14px;
 	}
 	.countdown{
-		transform: scale(1.1);
+		transform: scale(1);
 	}
 }
 @media (max-width:1100px)and (min-width:1000px){
@@ -450,7 +445,13 @@ margin-top: 5rem;
 	.countdown{
 		transform: scale(1);
 	}
-	
+	.main {
+		background-size: cover;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-evenly;
+		align-items: center;
+	}
 }
 @media (max-width:1000px)and (min-width:900px){
 	html{
@@ -463,20 +464,35 @@ margin-top: 5rem;
 	.countdown{
 		transform: scale(0.9);
 	}
+	.main {
+		background-size: cover;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-evenly;
+		align-items: center;
+	}
 }
 @media (max-width:900px)and (min-width:700px){
+	.main {
+		background-size: cover;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-evenly;
+		align-items: center;
+	}
 	html{
 		font-size: 13px;
 
 	}
 	.large-header{
-		flex-direction: column;
-		align-items: center;
-		justify-content: space-around;
+		/* flex-direction: column; */
+		/* align-items: center; */
+		/* justify-content: space-around; */
+		font-size: 11px !important;
 	}
 	.countdown{
 		transform: scale(0.8);
-		margin-bottom: 60px;
+		/* margin-bottom: 60px; */
 	}
 	.about-2-sub-head{
 		font-size: 4.5rem;
@@ -540,10 +556,10 @@ margin-top: 0;
 		text-align: center;
 	}
 	.main-title{
-		font-size: 4.5rem;
-		padding-left: 1rem;
-		padding-right: 1rem;
-		text-align: center;
+		font-size: 11px;
+		/* padding-left: 1rem; */
+		/* padding-right: 1rem; */
+		text-align: left;
 	}
 }
 @media (max-width:700px)and (min-width:500px){
@@ -551,15 +567,25 @@ margin-top: 0;
 		font-size: 10px;
 
 	}
+	.main-sub-head {
+    text-align: center;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.586em;
+    line-height: 1.375em;
+    letter-spacing: 0.02em;
+    color: #FFFFFF;
+}
 	.large-header{
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
+		font-size: 13px !important;
+		background-position: center !important;
 	}
 	.countdown{
 		transform: scale(0.8);
-		margin-bottom: 60px;
-		margin-top: 50px;
 	}
 	.about-2-sub-head{
 		font-size: 4.5rem;
@@ -623,9 +649,9 @@ margin-top: 0;
 		text-align: center;
 	}
 	.main-title{
-		font-size: 4.5rem;
-		padding-left: 1rem;
-		padding-right: 1rem;
+		font-size: 10px;
+		/* padding-left: 1rem; */
+		/* padding-right: 1rem; */
 		text-align: center;
 	}
 	.form{
@@ -650,28 +676,52 @@ margin-top: 0;
 	.form-input-1 select{
 		width: 70vw;
 	}
+	nav{
+		background: rgb(20 20 20) !important;
+	}
 	.large-header{
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
 		padding-left: 0px;
+		background-image:url(../bgrm.png) !important;
+		
 	}
 	.countdown{
-		transform: scale(0.7);
+		transform: scale(0.58);
 		/* margin-bottom: 60px; */
 		/* margin-top: 50px; */
+		margin: 0px;
 	}
 	.footer-hr{
 		height: 1.5px;
 	}
 	.main-sub-head{
 		/* padding-left: 3rem; */
-		padding-right: 3rem;
-		text-align: left;
+		/* padding-right: 3rem; */
+		text-align: center;
+		font-size: 10px;
 	}
 	html{
-		font-size: 7px;
-
+		/* font-size: 10px; */
+	}
+	#rnhead{
+		font-size:8px !important;
+	}
+	#rnform{
+		padding:0px !important;
+	}
+	#section-2{
+		font-size:7px;
+	}
+	.about-text {
+		margin: 2.125em 0;
+	}
+	#section-6{
+		font-size: 9px;
+	}
+	.faq{
+		padding: 0px 3.625em;;
 	}
 	.about-2-sub-head{
 		font-size: 4.5rem;
@@ -736,10 +786,10 @@ margin-top: 0;
 	}
 
 	.main-title{
-		font-size: 5rem;
+		font-size: 6px;
 		padding-left: 0rem;
 		padding-right: 0rem;
-		text-align: left;
+		text-align: center;
 	}
 	.form{
 		width: 80vw;
@@ -842,4 +892,7 @@ margin-top: 0;
 		margin-left: 15vw;
 		padding-left: 0;
 	}
+}
+.vertical-timeline::before {
+    border-radius: 10px !important;
 }
