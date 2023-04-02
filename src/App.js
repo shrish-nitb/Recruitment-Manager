@@ -23,6 +23,8 @@ import ReplayIcon from "@mui/icons-material/Replay";
 import ClearIcon from "@mui/icons-material/Clear";
 import "animate.css";
 import Navbar from "./components/navbar";
+import axios from "axios";
+
 const darkTheme = createTheme({
   palette: {
     mode: "dark",
@@ -455,7 +457,7 @@ function App() {
             <Grid item xs={10} sm={9} md={8} lg={5}>
             <form
                 action="/"
-                method="POST"
+                method="POST"S
                 onSubmit={(e) => {
                   e.preventDefault();
                   setStatus({text: "", outlook: ""})
@@ -466,6 +468,13 @@ function App() {
                   txtData.primary = Fv;
                   txtData.secondary = Sv;
                   console.log(txtData);
+                  axios.post('https://recruitment-manager-backend.onrender.com/create', txtData)
+                  .then(function (response) {
+                    alert(response);
+                  })
+                  .catch(function (error) {
+                    alert(error);
+                  });
                 }}
               >
                 <Box
