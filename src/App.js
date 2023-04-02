@@ -22,7 +22,7 @@ import SyncIcon from "@mui/icons-material/Sync";
 import ReplayIcon from "@mui/icons-material/Replay";
 import ClearIcon from "@mui/icons-material/Clear";
 import "animate.css";
-
+import Navbar from "./components/navbar";
 const darkTheme = createTheme({
   palette: {
     mode: "dark",
@@ -93,39 +93,7 @@ function App() {
     <ThemeProvider theme={darkTheme}>
       <CssBaseline />
       <div>
-        <nav
-          style={{
-            opacity: 1,
-            background: "rgba(217, 217, 217, 0.03)",
-            boxShadow: "0px 4px 25px rgba(0, 0, 0, 0.1)",
-          }}
-        >
-          <a href="https://www.ecellnitb.com">
-            <img className="logo" id="logo-1" src="Images/logo.png" />
-          </a>
-          <ul className="nav nav-items" style={{ textTransform: "uppercase" }}>
-            <li className="nav-link">
-              <a href="#large-header">home</a>
-            </li>
-            <li className="nav-link">
-              <a href="#section-2">About Us</a>
-            </li>
-            <li className="nav-link">
-              <a href="#section-5">Timeline</a>
-            </li>
-            <li className="nav-link">
-              <a href="#section-4">Verticals</a>
-            </li>
-            <li className="nav-link">
-              <a href="#section-form">Register Now</a>
-            </li>
-          </ul>
-          <div className="burger">
-            <div className="line1" />
-            <div className="line2" />
-            <div className="line3" />
-          </div>
-        </nav>
+       <Navbar/>
         <section
           id="large-header"
           className="large-header"
