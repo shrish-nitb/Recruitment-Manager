@@ -1081,3 +1081,6 @@ input::-webkit-inner-spin-button {
 input[type=number] {
   -moz-appearance: textfield;
 }
+section{
+	width:100vw;
+}
