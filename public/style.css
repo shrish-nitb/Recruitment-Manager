@@ -75,17 +75,7 @@
 }
 
 /* navbar end */
-#section-5{
-
-height: auto;
-    background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
-    overflow: hidden;
-    padding-top: 4.375rem;
-    padding-bottom: 2.375rem;
-    text-align: center;
-width:100%;
-
-}
+#section-5{height: auto;background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);overflow: hidden;padding-top: 0;padding-bottom: 2.375rem;text-align: center;width:100%;}
 .timeline{
     position:relative;
     max-width:1200px;
