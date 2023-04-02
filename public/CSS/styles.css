@@ -303,16 +303,14 @@ color: #EDA177;
 .footer-hr{height: 3px;width: 90vw;margin: auto;margin-bottom: 6.25rem;background-color: transparent;border: none;}
 .foot-head{
 	font-family: 'Poppins';
-font-style: normal;
-font-weight: 600;
-font-size:  2.25rem;
-line-height: 3.25rem;
+	font-style: normal;
+	font-weight: 600;
+	font-size:  2.25rem;
+	line-height: 3.25rem;
 /* identical to box height, or 144% */
-text-align: center;
-margin-left: 5vw;
-
-color: #FFFFFF;
-
+	text-align: center;
+	/* margin-left: 5vw; */
+	color: #FFFFFF;
 }
 .footer{
 	display: flex;
@@ -404,11 +402,12 @@ margin-right: 2.5rem;
 }
 .icon{
 	display: flex;
-	font-size: 1.43rem;
+	font-size: 2rem;
 	width: 40vw;
-	justify-content: space-around;
+	justify-content: center;
 	margin: auto;
 	color: #FFFFFF;
+	gap: 34px;
 	margin-bottom: 2rem;
 }
 .icon div a{
@@ -880,6 +879,7 @@ margin-top: 0;
 		margin-top: 3em;
 		padding-left: 0;
 		width: 80vw;
+		height: 102px;
 	}
 	
 	.social{
@@ -894,25 +894,31 @@ margin-top: 0;
 		color: #F4F4F4;
 	}
 	.foot-right p {
-		margin-top: 1em;
+		font-family: 'Poppins';
+		/* margin-top: 1em; */
 		text-align: center;
 		font-size: 1.375em;
 	}
 	.foot-right .fa-solid {
-		font-size: 14px;
+		font-size: 15px;
 		color: rgb(33, 150, 243);
 		margin-right: 17.5px;
 	}
 	.foot-right {
 	
-		font-family: 'Poppins';
-		font-style: normal;
-		font-weight: 400;
-		font-size: 1.375em;
-		line-height: 2em;
-		text-align: center;
-		color: #F3F3F3;
-		
+font-family: 'Poppins';
+	
+font-style: normal;
+	
+font-weight: 400;
+	
+font-size: 1.375em;
+	
+line-height: 2em;
+	
+text-align: center;
+	
+color: #F3F3F3;
 	}
 	.footer {
 		display: flex;
@@ -923,7 +929,7 @@ margin-top: 0;
 		font-family: 'Poppins';
 		font-style: normal;
 		font-weight: 400;
-		font-size: 1.375em;
+		/* font-size: 1.375em; */
 		line-height: 2em;
 		text-decoration: none;
 		color: #F3F3F3;
@@ -937,7 +943,7 @@ margin-top: 0;
 	}
 	.icon {
 		display: flex;
-		font-size: 1.43em;
+		font-size: 3.43em;
 		width: 40vw;
 		justify-content: space-around;
 		margin: auto;
