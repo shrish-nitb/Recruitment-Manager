@@ -457,7 +457,7 @@ function App() {
             <Grid item xs={10} sm={9} md={8} lg={5}>
             <form
                 action="/"
-                method="POST"S
+                method="POST"
                 onSubmit={(e) => {
                   e.preventDefault();
                   setStatus({text: "", outlook: ""})
@@ -467,14 +467,14 @@ function App() {
                   txtData.section = Section;
                   txtData.primary = Fv;
                   txtData.secondary = Sv;
-                  console.log(txtData);
-                  axios.post('https://recruitment-manager-backend.onrender.com/create', txtData)
+                  var request = axios.post('https://recruitment-manager-backend.onrender.com/create', txtData)
                   .then(function (response) {
-                    alert(response);
+                    alert(response)
                   })
                   .catch(function (error) {
-                    alert(error);
+                    console.log(error)
                   });
+                
                 }}
               >
                 <Box
