@@ -40,6 +40,22 @@ export default function Navbar(){
              
       }
     }
+    function disableScroll() {
+        // Get the current page scroll position
+      const  scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+       const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+      
+            // if any scroll is attempted,
+            // set this to the previous value
+            window.onscroll = function() {
+                window.scrollTo(scrollLeft, scrollTop);
+            };
+    }
+      
+    function enableScroll() {
+        window.onscroll = function() {};
+    }
+  
     const toggleBurger =() => {
         const burger = document.querySelector('.burger');
         const nav = document.querySelector('.nav-items');
@@ -58,6 +74,12 @@ export default function Navbar(){
         });
         // Burger Animation
         burger.classList.toggle('toggle');
+        if(burger.classList.contains("toggle")){
+          disableScroll();
+        }
+        else {
+            enableScroll();
+        }
 
     }
    const closeNav=() =>{
@@ -66,7 +88,7 @@ export default function Navbar(){
         if(window.innerWidth<1110){
           nav.classList.remove("nav-active");
           burger.classList.remove('toggle');
-      
+          window.onscroll= function () {};
         }
       }
     
