@@ -16,8 +16,11 @@ import OutlinedInput from "@mui/material/OutlinedInput";
 import LoadingButton from "@mui/lab/LoadingButton";
 import { ThemeProvider, createTheme, withTheme } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
-import Typography from '@mui/material/Typography';
-
+import Typography from "@mui/material/Typography";
+import IconButton from "@mui/material/IconButton";
+import SyncIcon from "@mui/icons-material/Sync";
+import ReplayIcon from "@mui/icons-material/Replay";
+import ClearIcon from "@mui/icons-material/Clear";
 import "animate.css";
 
 const darkTheme = createTheme({
@@ -26,25 +29,42 @@ const darkTheme = createTheme({
   },
 });
 
-
-
 function App() {
+  var Verticals = [
+    "Sponsorship",
+    "Event Management",
+    "Content Writer",
+    "Web Developer",
+    "Designer",
+    "Video Editor",
+  ];
+  var [status, setStatus] = React.useState({text: "Apply", outlook: "outlined"});
+  var [PrimaryVerticals, setPrimaryVerticals] = React.useState(Verticals);
+  var [SecondaryVerticals, setSecondaryVerticals] = React.useState(Verticals);
   const [Course, setCourse] = React.useState("");
   const [Year, setYear] = React.useState("");
   const [Section, setSection] = React.useState("");
   const [Fv, setFv] = React.useState("");
   const [Sv, setSv] = React.useState("");
-
+  const [pcbDisplay, setpcbDisplay] = React.useState("none");
+  const [scbDisplay, setscbDisplay] = React.useState("none");
+  const [isLoading, setLoading] = React.useState(false);
   const handleCourseChange = (e) => {
     setCourse(e.target.value);
   };
+  var [sectioncontrolinputbool, setsectioncontrolinputbool] =
+    React.useState(false);
+
+  var [sectionControlDisplay, setsectionControlDisplay] =
+    React.useState("none");
   const handleYearChange = (e) => {
     setYear(e.target.value);
     if (e.target.value == "First") {
-      console.log(Year);
-      document.getElementById("SectionControl").style.display = "block";
+      setsectioncontrolinputbool(true);
+      setsectionControlDisplay("block");
     } else {
-      document.getElementById("SectionControl").style.display = "none";
+      setsectioncontrolinputbool(false);
+      setsectionControlDisplay("none");
     }
   };
   const handleSectionChange = (e) => {
@@ -52,40 +72,49 @@ function App() {
   };
   const handleFvChange = (e) => {
     setFv(e.target.value);
+    setSecondaryVerticals(
+      Verticals.filter((b) => {
+        return b !== e.target.value;
+      })
+    );
+    setpcbDisplay("flex");
   };
   const handleSvChange = (e) => {
     setSv(e.target.value);
+    setPrimaryVerticals(
+      Verticals.filter((a) => {
+        return a !== e.target.value;
+      })
+    );
+    setscbDisplay("flex");
   };
 
   return (
     <ThemeProvider theme={darkTheme}>
       <CssBaseline />
       <div>
-        <nav style={{opacity:1,background: "rgba(217, 217, 217, 0.03)",
-    boxShadow: "0px 4px 25px rgba(0, 0, 0, 0.1)"}}>
+        <nav
+          style={{
+            opacity: 1,
+            background: "rgba(217, 217, 217, 0.03)",
+            boxShadow: "0px 4px 25px rgba(0, 0, 0, 0.1)",
+          }}
+        >
           <a href="https://www.ecellnitb.com">
             <img className="logo" id="logo-1" src="Images/logo.png" />
           </a>
           <ul className="nav nav-items" style={{ textTransform: "uppercase" }}>
             <li className="nav-link">
-              <a  href="#large-header">
-                home
-              </a>
+              <a href="#large-header">home</a>
             </li>
             <li className="nav-link">
-              <a  href="#section-2">
-                About Us
-              </a>
+              <a href="#section-2">About Us</a>
             </li>
             <li className="nav-link">
-              <a  href="#section-5">
-                Timeline
-              </a>
+              <a href="#section-5">Timeline</a>
             </li>
             <li className="nav-link">
-              <a  href="#section-4">
-                Verticals
-              </a>
+              <a href="#section-4">Verticals</a>
             </li>
             <li className="nav-link">
               <a href="#section-form">Register Now</a>
@@ -188,131 +217,140 @@ function App() {
         {/*timeline and vertical*/}
         {/*timeline*/}
         <section id="section-5">
-        <h3
-          className="proposal-title"
-          style={{ color: "White", marginBottom: "0px" }}
-        >
-          Timeline{" "}
-        </h3>
+          <h3
+            className="proposal-title"
+            style={{ color: "White", marginBottom: "0px" }}
+          >
+            Timeline{" "}
+          </h3>
 
-        <VerticalTimeline className="vertical-timeline">
-          <VerticalTimelineElement
-            className="vertical-timeline-element--work "
-            contentStyle={{
-              background: "#fff",
-              color: "white",
-              boxShadow: "0 3px 0 #2196f3",
-              textAlign:"left"
-            }}
-            contentArrowStyle={{ borderRight: "7px solid #fff" }}
-            date="2011 - present"
-  
-            iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
-          >
-            <div style={{ color: "rgb(48 48 48)" }}>
-              <h3 className="vertical-timeline-element-title">
-                Creative Director
-              </h3>
-              <h4 className="vertical-timeline-element-subtitle">Miami, FL</h4>
-              <p>
-                Creative Direction, User Experience, Visual Design, Project
-                Management, Team Leading
-              </p>
-            </div>
-          </VerticalTimelineElement>
-          <VerticalTimelineElement
-            className="vertical-timeline-element--work"
-            contentStyle={{
-              background: "#fff",
-              color: "white",
-              boxShadow: "0 3px 0 #2196f3",
-              textAlign:"left"
-            }}
-            contentArrowStyle={{ borderRight: "7px solid #fff" }}
-            date="2011 - present"
-            iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
-          >
-            <div style={{ color: "rgb(48 48 48)" }}>
-              <h3 className="vertical-timeline-element-title">
-                Creative Director
-              </h3>
-              <h4 className="vertical-timeline-element-subtitle">Miami, FL</h4>
-              <p>
-                Creative Direction, User Experience, Visual Design, Project
-                Management, Team Leading
-              </p>
-            </div>
-          </VerticalTimelineElement>
-          <VerticalTimelineElement
-            className="vertical-timeline-element--work"
-            contentStyle={{
-              background: "#fff",
-              color: "white",
-              boxShadow: "0 3px 0 #2196f3",
-              textAlign:"left"
-            }}
-            contentArrowStyle={{ borderRight: "7px solid #fff" }}
-            date="2011 - present"
-            iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
-          >
-            <div style={{ color: "rgb(48 48 48)" }}>
-              <h3 className="vertical-timeline-element-title">
-                Creative Director
-              </h3>
-              <h4 className="vertical-timeline-element-subtitle">Miami, FL</h4>
-              <p>
-                Creative Direction, User Experience, Visual Design, Project
-                Management, Team Leading
-              </p>
-            </div>
-          </VerticalTimelineElement>
-          <VerticalTimelineElement
-            className="vertical-timeline-element--work"
-            contentStyle={{
-              background: "#fff",
-              color: "white",
-              boxShadow: "0 3px 0 #2196f3",
-              textAlign:"left"
-            }}
-            contentArrowStyle={{ borderRight: "7px solid #fff" }}
-            date="2011 - present"
-            iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
-          >
-            <div style={{ color: "rgb(48 48 48)" }}>
-              <h3 className="vertical-timeline-element-title">
-                Creative Director
-              </h3>
-              <h4 className="vertical-timeline-element-subtitle">Miami, FL</h4>
-              <p>
-                Creative Direction, User Experience, Visual Design, Project
-                Management, Team Leading
-              </p>
-            </div>
-          </VerticalTimelineElement>
-          <VerticalTimelineElement
-            className="vertical-timeline-element--work"
-            contentStyle={{
-              background: "#fff",
-              color: "white",
-              boxShadow: "0 3px 0 #2196f3",
-              textAlign:"left"
-            }}
-            contentArrowStyle={{ borderRight: "7px solid #fff" }}
-            date="2011 - present"
-            iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
-          >
-            <div style={{ color: "rgb(48 48 48)" }}>
-              <h3 className="vertical-timeline-element-title">
-                Creative Director
-              </h3>
-              <h4 className="vertical-timeline-element-subtitle">Miami, FL</h4>
-              <p>
-                Creative Direction, User Experience, Visual Design, Project
-                Management, Team Leading
-              </p>
-            </div>
-          </VerticalTimelineElement>
-        </VerticalTimeline>
+          <VerticalTimeline className="vertical-timeline">
+            <VerticalTimelineElement
+              className="vertical-timeline-element--work "
+              contentStyle={{
+                background: "#fff",
+                color: "white",
+                boxShadow: "0 3px 0 #2196f3",
+                textAlign: "left",
+              }}
+              contentArrowStyle={{ borderRight: "7px solid #fff" }}
+              date="2011 - present"
+              iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
+            >
+              <div style={{ color: "rgb(48 48 48)" }}>
+                <h3 className="vertical-timeline-element-title">
+                  Creative Director
+                </h3>
+                <h4 className="vertical-timeline-element-subtitle">
+                  Miami, FL
+                </h4>
+                <p>
+                  Creative Direction, User Experience, Visual Design, Project
+                  Management, Team Leading
+                </p>
+              </div>
+            </VerticalTimelineElement>
+            <VerticalTimelineElement
+              className="vertical-timeline-element--work"
+              contentStyle={{
+                background: "#fff",
+                color: "white",
+                boxShadow: "0 3px 0 #2196f3",
+                textAlign: "left",
+              }}
+              contentArrowStyle={{ borderRight: "7px solid #fff" }}
+              date="2011 - present"
+              iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
+            >
+              <div style={{ color: "rgb(48 48 48)" }}>
+                <h3 className="vertical-timeline-element-title">
+                  Creative Director
+                </h3>
+                <h4 className="vertical-timeline-element-subtitle">
+                  Miami, FL
+                </h4>
+                <p>
+                  Creative Direction, User Experience, Visual Design, Project
+                  Management, Team Leading
+                </p>
+              </div>
+            </VerticalTimelineElement>
+            <VerticalTimelineElement
+              className="vertical-timeline-element--work"
+              contentStyle={{
+                background: "#fff",
+                color: "white",
+                boxShadow: "0 3px 0 #2196f3",
+                textAlign: "left",
+              }}
+              contentArrowStyle={{ borderRight: "7px solid #fff" }}
+              date="2011 - present"
+              iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
+            >
+              <div style={{ color: "rgb(48 48 48)" }}>
+                <h3 className="vertical-timeline-element-title">
+                  Creative Director
+                </h3>
+                <h4 className="vertical-timeline-element-subtitle">
+                  Miami, FL
+                </h4>
+                <p>
+                  Creative Direction, User Experience, Visual Design, Project
+                  Management, Team Leading
+                </p>
+              </div>
+            </VerticalTimelineElement>
+            <VerticalTimelineElement
+              className="vertical-timeline-element--work"
+              contentStyle={{
+                background: "#fff",
+                color: "white",
+                boxShadow: "0 3px 0 #2196f3",
+                textAlign: "left",
+              }}
+              contentArrowStyle={{ borderRight: "7px solid #fff" }}
+              date="2011 - present"
+              iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
+            >
+              <div style={{ color: "rgb(48 48 48)" }}>
+                <h3 className="vertical-timeline-element-title">
+                  Creative Director
+                </h3>
+                <h4 className="vertical-timeline-element-subtitle">
+                  Miami, FL
+                </h4>
+                <p>
+                  Creative Direction, User Experience, Visual Design, Project
+                  Management, Team Leading
+                </p>
+              </div>
+            </VerticalTimelineElement>
+            <VerticalTimelineElement
+              className="vertical-timeline-element--work"
+              contentStyle={{
+                background: "#fff",
+                color: "white",
+                boxShadow: "0 3px 0 #2196f3",
+                textAlign: "left",
+              }}
+              contentArrowStyle={{ borderRight: "7px solid #fff" }}
+              date="2011 - present"
+              iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
+            >
+              <div style={{ color: "rgb(48 48 48)" }}>
+                <h3 className="vertical-timeline-element-title">
+                  Creative Director
+                </h3>
+                <h4 className="vertical-timeline-element-subtitle">
+                  Miami, FL
+                </h4>
+                <p>
+                  Creative Direction, User Experience, Visual Design, Project
+                  Management, Team Leading
+                </p>
+              </div>
+            </VerticalTimelineElement>
+          </VerticalTimeline>
         </section>
         <section id="section-4" style={{ width: "100vw" }}>
           <div className="proposal">
@@ -395,7 +433,10 @@ function App() {
         {/* Registration form */}
         <section id="section-form">
           <Grid
-            sx={{ justifyContent: { xs: "center", lg: "left" }, pb:{xs:"3em",sm:"2em",md:"2em"}}}
+            sx={{
+              justifyContent: { xs: "center", lg: "left" },
+              pb: { xs: "3em", sm: "2em", md: "2em" },
+            }}
             container
             style={{ marginTop: "4rem" }}
           >
@@ -412,85 +453,98 @@ function App() {
               ></Box>
             </Grid>
             <Grid item xs={10} sm={9} md={8} lg={5}>
-              <Box
-                id="rnform"
-                component="form"
-                sx={{
-                  "& > :not(style)": { m: 1, width: "95%" },
+              <form
+                action="/"
+                method="POST"
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  setStatus({text: "", outlook: ""})
+                  setLoading(true)
+                  console.log(e);
                 }}
-                style={{ textAlign: "center" }}
               >
-                <Box id="rnhead" sx={{ my: 3 }}>
-                  {" "}
-                  <span
-                    style={{
-                      fontFamily: '"Poppins"',
-                      fontStyle: "normal",
-                      fontWeight: 800,
-                      fontSize: "4.0971em",
-                      letterSpacing: "0.06em",
-                      color: "#FA43FF",
-                      display: "inline-block",
-                      marginRight: "0.25em",
-                    }}
-                  >
-                    Register
-                  </span>
-                  <span
-                    style={{
-                      fontFamily: '"Poppins"',
-                      fontStyle: "normal",
-                      fontWeight: 700,
-                      fontSize: "4.0971em",
-                      color: "white",
-                    }}
-                  >
-                    Now
-                  </span>
-                </Box>
-
-                <FormControl variant="outlined">
-                  <InputLabel htmlFor="fullnameInput">Fullname</InputLabel>
-                  <OutlinedInput
-                    id="fullnameInput"
+                <Box
+                  id="rnform"
+                  style={{ textAlign: "center" }}
+                  sx={{
+                    "& > :not(style)": { m: 1, width: "98%" },
+                  }}
+                >
+                  <Box id="rnhead" sx={{ my: 3 }}>
+                    {" "}
+                    <span
+                      style={{
+                        fontFamily: '"Poppins"',
+                        fontStyle: "normal",
+                        fontWeight: 800,
+                        fontSize: "4.0971em",
+                        letterSpacing: "0.06em",
+                        color: "#FA43FF",
+                        display: "inline-block",
+                        marginRight: "0.25em",
+                      }}
+                    >
+                      Register
+                    </span>
+                    <span
+                      style={{
+                        fontFamily: '"Poppins"',
+                        fontStyle: "normal",
+                        fontWeight: 700,
+                        fontSize: "4.0971em",
+                        color: "white",
+                      }}
+                    >
+                      Now
+                    </span>
+                  </Box>
+                  <TextField
                     label="Fullname"
+                    required
+                    id="fullnameInput"
+                    name="name"
                     variant="outlined"
-                  />
-                </FormControl>
-                <FormControl variant="outlined">
-                  <InputLabel htmlFor="scholarInput">Scholar ID</InputLabel>
-                  <OutlinedInput
-                    id="scholarInput"
+                  >
+                    Fullname
+                  </TextField>
+                  <TextField
+                    type="number"
                     label="Scholar ID"
+                    required
+                    id="scholarInput"
+                    name="scholar"
                     variant="outlined"
-                  />
-                </FormControl>
-                <FormControl fullWidth>
-                  <InputLabel id="CourseLabel">Course</InputLabel>
-                  <Select
-                    MenuProps={{
-                      disableScrollLock: true,
+                    onKeyDown={(e) => {
+                      if (e.which === 38 || e.which === 40 || e.which === 69) {
+                        e.preventDefault();
+                      }
                     }}
-                    labelId="CourseLabel"
-                    value={Course}
+                  >
+                    Scholar ID
+                  </TextField>
+
+                  <TextField
+                    select
+                    required
                     label="Course"
+                    name="branch"
+                    value={Course}
+                    sx={{ textAlign: "left" }}
                     onChange={handleCourseChange}
                     fullWidth
                   >
                     <MenuItem value={"CSE"}>CSE</MenuItem>
                     <MenuItem value={"ECE"}>ECE</MenuItem>
                     <MenuItem value={"EE"}>EE</MenuItem>
-                  </Select>
-                </FormControl>
-                <FormControl fullWidth>
-                  <InputLabel id="YearLabel">Year</InputLabel>
-                  <Select
-                    MenuProps={{
-                      disableScrollLock: true,
-                    }}
-                    labelId="YearLabel"
-                    value={Year}
+                  </TextField>
+
+                  <TextField
+                    select
+                    required
                     label="Year"
+                    name="year"
+                    value={Year}
+                    sx={{ textAlign: "left" }}
                     onChange={handleYearChange}
                     fullWidth
                   >
@@ -498,23 +552,19 @@ function App() {
                     <MenuItem value={"Second"}>Second</MenuItem>
                     <MenuItem value={"Third"}>Third</MenuItem>
                     <MenuItem value={"Fourth"}>Fourth</MenuItem>
-                  </Select>
-                </FormControl>
-                <FormControl
-                  id="SectionControl"
-                  style={{ display: "none" }}
-                  fullWidth
-                >
-                  <InputLabel id="SectionLabel">Section</InputLabel>
-                  <Select
-                    MenuProps={{
-                      disableScrollLock: true,
-                    }}
-                    labelId="SectionLabel"
-                    value={Section}
+                  </TextField>
+
+                  <TextField
+                    select
+                    required={sectioncontrolinputbool}
                     label="Section"
+                    name="section"
+                    sx={{ textAlign: "left" }}
                     onChange={handleSectionChange}
+                    value={Section}
                     fullWidth
+                    id="SectionControl"
+                    style={{ display: sectionControlDisplay }}
                   >
                     <MenuItem value={"A"}>A</MenuItem>
                     <MenuItem value={"B"}>B</MenuItem>
@@ -527,93 +577,151 @@ function App() {
                     <MenuItem value={"I"}>I</MenuItem>
                     <MenuItem value={"J"}>J</MenuItem>
                     <MenuItem value={"K"}>K</MenuItem>
-                  </Select>
-                </FormControl>
-                <FormControl variant="outlined">
-                  <InputLabel htmlFor="emailInput">Email</InputLabel>
-                  <OutlinedInput
+                  </TextField>
+
+                  <TextField
+                    required
+                    type="email"
                     id="emailInput"
                     label="Email"
                     variant="outlined"
-                  />
-                </FormControl>
-                <FormControl variant="outlined">
-                  <InputLabel htmlFor="whatsappInput">Whatsapp</InputLabel>
-                  <OutlinedInput
+                    name="email"
+                  >
+                    Email
+                  </TextField>
+
+                  <TextField
+                    required
+                    type="number"
                     id="whatsappInput"
                     label="Whatsapp"
-                    startAdornment={
-                      <InputAdornment position="start">+91</InputAdornment>
-                    }
+                    name="whatsapp"
+                    InputProps={{
+                      startAdornment: (
+                        <InputAdornment position="start">+91</InputAdornment>
+                      ),
+                    }}
+                    onKeyDown={(e) => {
+                      if (e.which === 38 || e.which === 40 || e.which === 69) {
+                        e.preventDefault();
+                      }
+                    }}
                     variant="outlined"
-                  />
-                </FormControl>
-                <FormControl fullWidth>
-                  <InputLabel id="FvLabel">Primary Vertical</InputLabel>
-                  <Select
+                  >
+                    Whatsapp
+                  </TextField>
+
+                  <TextField
+                    select
+                    required
                     MenuProps={{
                       disableScrollLock: true,
                     }}
                     labelId="FvLabel"
                     value={Fv}
+                    InputProps={{
+                      endAdornment: (
+                        <InputAdornment position="end" sx={{ mx: 2 }}>
+                          <IconButton
+                            id="pcb"
+                            style={{ display: pcbDisplay }}
+                            onClick={() => {
+                              setpcbDisplay("none");
+                              setFv("");
+                              setPrimaryVerticals(
+                                Verticals.filter((a) => {
+                                  return a !== Sv;
+                                })
+                              );
+                              setSecondaryVerticals(Verticals);
+                            }}
+                          >
+                            <ClearIcon></ClearIcon>
+                          </IconButton>
+                        </InputAdornment>
+                      ),
+                    }}
                     label="Primary Vertical"
+                    name="primary"
                     onChange={handleFvChange}
+                    sx={{ textAlign: "left" }}
                     fullWidth
                   >
-                    <MenuItem value={"A"}>A</MenuItem>
-                    <MenuItem value={"B"}>B</MenuItem>
-                    <MenuItem value={"C"}>C</MenuItem>
-                    <MenuItem value={"D"}>D</MenuItem>
-                    <MenuItem value={"E"}>E</MenuItem>
-                    <MenuItem value={"F"}>F</MenuItem>
-                    <MenuItem value={"G"}>G</MenuItem>
-                    <MenuItem value={"H"}>H</MenuItem>
-                    <MenuItem value={"I"}>I</MenuItem>
-                    <MenuItem value={"J"}>J</MenuItem>
-                    <MenuItem value={"K"}>K</MenuItem>
-                  </Select>
-                </FormControl>
-                <FormControl fullWidth>
-                  <InputLabel id="SvLabel">Secondary Vertical</InputLabel>
-                  <Select
+                    {PrimaryVerticals.map((e) => {
+                      return <MenuItem value={e}>{e}</MenuItem>;
+                    })}
+                  </TextField>
+
+                  <TextField
+                    select
+                    required
                     MenuProps={{
                       disableScrollLock: true,
                     }}
+                    InputProps={{
+                      endAdornment: (
+                        <InputAdornment position="end" sx={{ mx: 2 }}>
+                          <IconButton
+                            id="scb"
+                            style={{ display: scbDisplay }}
+                            onClick={() => {
+                              setscbDisplay("none");
+                              setSv("");
+                              setPrimaryVerticals(Verticals);
+                              setSecondaryVerticals(
+                                Verticals.filter((a) => {
+                                  return a !== Fv;
+                                })
+                              );
+                            }}
+                          >
+                            <ClearIcon></ClearIcon>
+                          </IconButton>
+                        </InputAdornment>
+                      ),
+                    }}
                     labelId="SvLabel"
                     value={Sv}
+                    name="secondary"
                     label="Secondary Vertical"
                     onChange={handleSvChange}
+                    sx={{ textAlign: "left" }}
                     fullWidth
                   >
-                    <MenuItem value={"A"}>A</MenuItem>
-                    <MenuItem value={"B"}>B</MenuItem>
-                    <MenuItem value={"C"}>C</MenuItem>
-                    <MenuItem value={"D"}>D</MenuItem>
-                    <MenuItem value={"E"}>E</MenuItem>
-                    <MenuItem value={"F"}>F</MenuItem>
-                    <MenuItem value={"G"}>G</MenuItem>
-                    <MenuItem value={"H"}>H</MenuItem>
-                    <MenuItem value={"I"}>I</MenuItem>
-                    <MenuItem value={"J"}>J</MenuItem>
-                    <MenuItem value={"K"}>K</MenuItem>
-                  </Select>
-                </FormControl>
-                <Typography variant="subtitle2" display="block" sx={{textAlign:"left",px:2}} style={{color:"#f5f5f5d6"}} gutterBottom>
-                  By Clicking Apply you agree to our Terms and Conditions
-                </Typography>
+                    {SecondaryVerticals.map((e) => {
+                      return <MenuItem value={e}>{e}</MenuItem>;
+                    })}
+                  </TextField>
 
-                <LoadingButton
-                  variant="outlined"
-                  style={{
-                    borderColor: "#fff",
-                    color: "white",
-                    marginTop: "2rem",
-                  }}
-                  sx={{p:2,fontSize:{xs:"0.8rem",lg:"1.1rem"}}}
-                >
-                  APPLY
-                </LoadingButton>
-              </Box>
+                  <Typography
+                    variant="subtitle2"
+                    display="block"
+                    sx={{ textAlign: "left", px: 2 }}
+                    style={{ color: "#f5f5f5d6" }}
+                    gutterBottom
+                  >
+                    By Clicking Apply you agree to our Terms and Conditions
+                  </Typography>
+
+                  <LoadingButton
+                    type="submit"
+                    variant={status.outlook}
+                    loading={isLoading}
+                    style={{
+                      borderColor: "#fff",
+                      color: "white",
+                      marginTop: "2rem",
+                    }}
+                    sx={{ p: 2, fontSize: { xs: "0.8rem", lg: "1.1rem" } }}
+                    onClick={(e) => {
+                      console.log(e);
+                    }}
+                    fullWidth
+                  >
+                   {status.text}
+                  </LoadingButton>
+                </Box>
+              </form>
             </Grid>
           </Grid>
         </section>
@@ -731,7 +839,5 @@ function App() {
     </ThemeProvider>
   );
 }
-
-
 
 export default App;
