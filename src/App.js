@@ -485,7 +485,7 @@ theme="colored"
                   var request = axios.post('https://recruitment-manager-backend.onrender.com/create', txtData)
                   .then(function (response) {
                     if(response.data == 2){
-                      toast.success("You're registered Succesfully ALL THE BEST!!", {
+                      toast.success("You're registered Succesfully!!", {
                         position: "bottom-right",
                         autoClose: 5000,
                         hideProgressBar: false,
@@ -507,7 +507,7 @@ theme="colored"
                         theme: "colored",
                         });
                     }
-                    setStatus({text: "Apply", outlook: "contained"})
+                    setStatus({text: "Apply", outlook: "outlined"})
                     setLoading(false)
                   })
                   .catch(function (error) {
@@ -521,7 +521,7 @@ theme="colored"
                       progress: undefined,
                       theme: "colored",
                       });
-                    setStatus({text: "Apply", outlook: "contained"})
+                    setStatus({text: "Apply", outlook: "outlined"})
                     setLoading(false)
                   });
                 
