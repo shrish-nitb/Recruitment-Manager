@@ -33,13 +33,43 @@ function App() {
   const [txtData, setTxtData] = React.useState({name: "", scholar: "", email: "", whatsapp: ""});
  
   var Verticals = [
-    "Sponsorship",
-    "Event Management",
+    "Sponsorship Executive",
+    "Event Manager",
     "Content Writer",
     "Web Developer",
     "Designer",
     "Video Editor",
   ];
+  const collection = {
+    course: [
+      "Architecture",
+      "Civil Engineering",
+      "Chemical Engineering",
+      "Computer Science Engineering",
+      "Electrical Engineering",
+      "Electronics and Communication Engineering",
+      "Materials and Metallurgical Engineering",
+      "Mathematics and Data Science",
+      "Mechanical Engineering",
+      "Planning",
+    ],
+    Year: ["First", "Second", "Third", "Fourth"],
+    Section: [
+      "Architecture A",
+      "Architecture B",
+      "Planning A",
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+    ]
+  };
   var [status, setStatus] = React.useState({text: "Apply", outlook: "outlined"});
   var [PrimaryVerticals, setPrimaryVerticals] = React.useState(Verticals);
   var [SecondaryVerticals, setSecondaryVerticals] = React.useState(Verticals);
@@ -518,9 +548,9 @@ function App() {
                     onChange={handleCourseChange}
                     fullWidth
                   >
-                    <MenuItem value={"CSE"}>CSE</MenuItem>
-                    <MenuItem value={"ECE"}>ECE</MenuItem>
-                    <MenuItem value={"EE"}>EE</MenuItem>
+                    {collection.course.map((e) => {
+                      return <MenuItem value={e}>{e}</MenuItem>;
+                    })}
                   </TextField>
 
                   <TextField
@@ -533,10 +563,9 @@ function App() {
                     onChange={handleYearChange}
                     fullWidth
                   >
-                    <MenuItem value={"First"}>First</MenuItem>
-                    <MenuItem value={"Second"}>Second</MenuItem>
-                    <MenuItem value={"Third"}>Third</MenuItem>
-                    <MenuItem value={"Fourth"}>Fourth</MenuItem>
+                    {collection.Year.map((e) => {
+                      return <MenuItem value={e}>{e}</MenuItem>;
+                    })}
                   </TextField>
 
                   <TextField
@@ -551,17 +580,9 @@ function App() {
                     id="SectionControl"
                     style={{ display: sectionControlDisplay }}
                   >
-                    <MenuItem value={"A"}>A</MenuItem>
-                    <MenuItem value={"B"}>B</MenuItem>
-                    <MenuItem value={"C"}>C</MenuItem>
-                    <MenuItem value={"D"}>D</MenuItem>
-                    <MenuItem value={"E"}>E</MenuItem>
-                    <MenuItem value={"F"}>F</MenuItem>
-                    <MenuItem value={"G"}>G</MenuItem>
-                    <MenuItem value={"H"}>H</MenuItem>
-                    <MenuItem value={"I"}>I</MenuItem>
-                    <MenuItem value={"J"}>J</MenuItem>
-                    <MenuItem value={"K"}>K</MenuItem>
+                    {collection.Section.map((e) => {
+                      return <MenuItem value={e}>{e}</MenuItem>;
+                    })}
                   </TextField>
 
                   <TextField
