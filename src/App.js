@@ -469,7 +469,7 @@ function App() {
                   txtData.secondary = Sv;
                   var request = axios.post('https://recruitment-manager-backend.onrender.com/create', txtData)
                   .then(function (response) {
-                    alert(response)
+                    console.log(response)
                   })
                   .catch(function (error) {
                     console.log(error)
