@@ -769,41 +769,52 @@ function App() {
         </section>
         <section id="section-7">
           <hr className="footer-hr" />
-          <p className="foot-head">Contact Us</p>
+          <p className="foot-head">Contact Us</p>     
           <div className="footer">
             <div className="foot-left">
               <div className="foot-no">
-                <p>Sarthak Agar</p>
+                <p>Chaitanya Sharma</p>
                 <p>
-                  <a href="tel: +91 97528 24611">+91 97528 24611</a>{" "}
+                  <a href="tel: +91 98972 25339">+91 98972 25339</a>{" "}
                 </p>
               </div>
               <div className="foot-no">
-                <p>Aaditya vijayvargiya</p>
+                <p>Krishna Lalwani</p>
                 <p>
-                  <a href="tel:+91 93402 86321">+91 93402 86321</a>
+                  <a href="tel:+91 70492 99241">+91 70492 99241</a>
                 </p>
               </div>
               <div className="foot-no">
-                <p>Gopal Vashisth</p>
+                <p>Arushi Gulati</p>
                 <p>
-                  <a href="tel:+91 97175 94994"> +91 97175 94994</a>
+                  <a href="tel:+91 93017 53553">+91 93017 53553</a>
                 </p>
               </div>
             </div>
+          
             <div className="foot-right">
-              <p className="adress-content">
+            <div className="footer-two-icons">
+            <i className="fa-solid fa-location-dot" />
+            <a href="mailto:alum@ecellnitb.com">
+                  <i className="fa-solid fa-envelope" />
+                
+                </a>
+            </div>
+            <div className="footer-address-mail">
+            <p className="adress-content">
                 {" "}
-                <i className="fa-solid fa-location-dot" />
+                
                 Maulana Azad National Institute of Technology, Bhopal India -
                 462003
               </p>
               <p className="footer-mail">
                 <a href="mailto:alum@ecellnitb.com">
-                  <i className="fa-solid fa-envelope" />
+                 
                   support@ecellnitb.com
                 </a>
               </p>
+            </div>
+             
             </div>
           </div>
           <div className="social">
