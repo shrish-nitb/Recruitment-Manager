@@ -25,6 +25,9 @@ import "animate.css";
 import Navbar from "./components/navbar";
 import axios from "axios";
 
+import { toast, ToastContainer } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
+
 const darkTheme = createTheme({
   palette: {
     mode: "dark",
@@ -455,6 +458,18 @@ function App() {
               ></Box>
             </Grid>
             <Grid item xs={10} sm={9} md={8} lg={5}>
+            <ToastContainer
+position="bottom-right"
+autoClose={5000}
+hideProgressBar={false}
+newestOnTop={false}
+closeOnClick
+rtl={false}
+pauseOnFocusLoss
+draggable
+pauseOnHover
+theme="colored"
+/>
             <form
                 action="/"
                 method="POST"
@@ -469,10 +484,45 @@ function App() {
                   txtData.secondary = Sv;
                   var request = axios.post('https://recruitment-manager-backend.onrender.com/create', txtData)
                   .then(function (response) {
-                    console.log(response)
+                    if(response.data == 2){
+                      toast.success("You're registered Succesfully ALL THE BEST!!", {
+                        position: "bottom-right",
+                        autoClose: 5000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: "colored",
+                        });
+                    } else {
+                      toast.error(`Failed: ERR CODE ${response.data}`, {
+                        position: "bottom-right",
+                        autoClose: 5000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: "colored",
+                        });
+                    }
+                    setStatus({text: "Apply", outlook: "contained"})
+                    setLoading(false)
                   })
                   .catch(function (error) {
-                    console.log(error)
+                    toast.error(`ERROR: ${error}`, {
+                      position: "bottom-right",
+                      autoClose: 5000,
+                      hideProgressBar: false,
+                      closeOnClick: true,
+                      pauseOnHover: true,
+                      draggable: true,
+                      progress: undefined,
+                      theme: "colored",
+                      });
+                    setStatus({text: "Apply", outlook: "contained"})
+                    setLoading(false)
                   });
                 
                 }}
