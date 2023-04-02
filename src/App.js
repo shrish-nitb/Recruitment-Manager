@@ -239,19 +239,18 @@ function App() {
                 textAlign: "left",
               }}
               contentArrowStyle={{ borderRight: "7px solid #fff" }}
-              date="2011 - present"
+              date="Round 1"
               iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
             >
               <div style={{ color: "rgb(48 48 48)" }}>
                 <h3 className="vertical-timeline-element-title">
-                  Creative Director
+                  Lorem, ipsum dolor.
                 </h3>
                 <h4 className="vertical-timeline-element-subtitle">
-                  Miami, FL
+                  Lorem, ipsum.
                 </h4>
                 <p>
-                  Creative Direction, User Experience, Visual Design, Project
-                  Management, Team Leading
+                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam, natus!
                 </p>
               </div>
             </VerticalTimelineElement>
@@ -269,14 +268,13 @@ function App() {
             >
               <div style={{ color: "rgb(48 48 48)" }}>
                 <h3 className="vertical-timeline-element-title">
-                  Creative Director
+                  Lorem, ipsum dolor.
                 </h3>
                 <h4 className="vertical-timeline-element-subtitle">
-                  Miami, FL
+                  Lorem, ipsum.
                 </h4>
                 <p>
-                  Creative Direction, User Experience, Visual Design, Project
-                  Management, Team Leading
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam, natus!
                 </p>
               </div>
             </VerticalTimelineElement>
@@ -294,14 +292,13 @@ function App() {
             >
               <div style={{ color: "rgb(48 48 48)" }}>
                 <h3 className="vertical-timeline-element-title">
-                  Creative Director
+                  Lorem, ipsum dolor.
                 </h3>
                 <h4 className="vertical-timeline-element-subtitle">
-                  Miami, FL
+                  Lorem, ipsum.
                 </h4>
                 <p>
-                  Creative Direction, User Experience, Visual Design, Project
-                  Management, Team Leading
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam, natus!
                 </p>
               </div>
             </VerticalTimelineElement>
@@ -319,14 +316,13 @@ function App() {
             >
               <div style={{ color: "rgb(48 48 48)" }}>
                 <h3 className="vertical-timeline-element-title">
-                  Creative Director
+                  Lorem, ipsum dolor.
                 </h3>
                 <h4 className="vertical-timeline-element-subtitle">
-                  Miami, FL
+                  Lorem, ipsum.
                 </h4>
                 <p>
-                  Creative Direction, User Experience, Visual Design, Project
-                  Management, Team Leading
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam, natus!
                 </p>
               </div>
             </VerticalTimelineElement>
@@ -344,14 +340,13 @@ function App() {
             >
               <div style={{ color: "rgb(48 48 48)" }}>
                 <h3 className="vertical-timeline-element-title">
-                  Creative Director
+                  Lorem, ipsum dolor.
                 </h3>
                 <h4 className="vertical-timeline-element-subtitle">
-                  Miami, FL
+                  Lorem, ipsum.
                 </h4>
                 <p>
-                  Creative Direction, User Experience, Visual Design, Project
-                  Management, Team Leading
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam, natus!
                 </p>
               </div>
             </VerticalTimelineElement>
@@ -820,10 +815,6 @@ theme="colored"
               manner.
             </p>
             <p className="ans">
-              The recruitment shall be done in three rounds and in a hybrid
-              manner.
-            </p>
-            <p className="ans">
               The first round shall be online where all participants will be
               given a task according to their verticals. Participants who clear
               this round shall advance to the offline interview round. The
@@ -848,23 +839,31 @@ theme="colored"
           <div className="footer">
             <div className="foot-left">
               <div className="foot-no">
-                <p>Chaitanya Sharma</p>
+                <p>Shrish Shrivastava</p>
                 <p>
-                  <a href="tel: +91 98972 25339">+91 98972 25339</a>{" "}
+                  <a href="tel: +91 93403 99137">+91 93403 99137</a>
                 </p>
               </div>
               <div className="foot-no">
-                <p>Krishna Lalwani</p>
+                <p>Krishna Kumar Lalwani</p>
                 <p>
                   <a href="tel:+91 70492 99241">+91 70492 99241</a>
                 </p>
               </div>
+              <div className="foot-no">
+              <p>Chaitanya Sharma</p>
+                <p>
+                  <a href="tel: +91 98972 25339">+91 98972 25339</a>
+                </p>
+              </div>
+              
               <div className="foot-no">
                 <p>Arushi Gulati</p>
                 <p>
                   <a href="tel:+91 93017 53553">+91 93017 53553</a>
                 </p>
               </div>
+
             </div>
           
             <div className="foot-right">
