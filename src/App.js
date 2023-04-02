@@ -30,6 +30,8 @@ const darkTheme = createTheme({
 });
 
 function App() {
+  const [txtData, setTxtData] = React.useState({name: "", scholar: "", email: "", whatsapp: ""});
+ 
   var Verticals = [
     "Sponsorship",
     "Event Management",
@@ -453,14 +455,19 @@ function App() {
               ></Box>
             </Grid>
             <Grid item xs={10} sm={9} md={8} lg={5}>
-              <form
+            <form
                 action="/"
                 method="POST"
                 onSubmit={(e) => {
                   e.preventDefault();
                   setStatus({text: "", outlook: ""})
                   setLoading(true)
-                  console.log(e);
+                  txtData.year = Year;
+                  txtData.course = Course;
+                  txtData.section = Section;
+                  txtData.primary = Fv;
+                  txtData.secondary = Sv;
+                  console.log(txtData);
                 }}
               >
                 <Box
@@ -503,6 +510,11 @@ function App() {
                     required
                     id="fullnameInput"
                     name="name"
+                    value={txtData.name}
+                    onChange={(e)=>{
+                        setTxtData({...txtData, name: e.target.value})
+                        
+                    }}
                     variant="outlined"
                   >
                     Fullname
@@ -514,6 +526,11 @@ function App() {
                     id="scholarInput"
                     name="scholar"
                     variant="outlined"
+                    value={txtData.scholar}
+                    onChange={(e)=>{
+                        setTxtData({...txtData, scholar: e.target.value})
+                        
+                    }}
                     onKeyDown={(e) => {
                       if (e.which === 38 || e.which === 40 || e.which === 69) {
                         e.preventDefault();
@@ -586,6 +603,11 @@ function App() {
                     label="Email"
                     variant="outlined"
                     name="email"
+                    value={txtData.email}
+                    onChange={(e)=>{
+                        setTxtData({...txtData, email: e.target.value})
+                        
+                    }}
                   >
                     Email
                   </TextField>
@@ -596,6 +618,11 @@ function App() {
                     id="whatsappInput"
                     label="Whatsapp"
                     name="whatsapp"
+                    value={txtData.whatsapp}
+                    onChange={(e)=>{
+                        setTxtData({...txtData, whatsapp: e.target.value})
+                        
+                    }}
                     InputProps={{
                       startAdornment: (
                         <InputAdornment position="start">+91</InputAdornment>
