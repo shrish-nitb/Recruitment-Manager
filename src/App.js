@@ -29,6 +29,8 @@ import GroupsIcon from '@mui/icons-material/Groups';
 import { toast, ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 import PersonIcon from '@mui/icons-material/Person';
+
+
 const darkTheme = createTheme({
   palette: {
     mode: "dark",
@@ -36,6 +38,11 @@ const darkTheme = createTheme({
 });
 
 function App() {
+  const [isReady, setIsReady] = React.useState(false);
+  React.useEffect(() => {
+    document.fonts.ready.then(() => setIsReady(true));
+  }, [])
+
   const [txtData, setTxtData] = React.useState({name: "", scholar: "", email: "", whatsapp: ""});
  
   var Verticals = [
@@ -127,7 +134,7 @@ function App() {
     setscbDisplay("flex");
   };
 
-  return (
+  return (isReady &&
     <ThemeProvider theme={darkTheme}>
       <CssBaseline />
       <div>
