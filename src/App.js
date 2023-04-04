@@ -24,10 +24,11 @@ import ClearIcon from "@mui/icons-material/Clear";
 import "animate.css";
 import Navbar from "./components/navbar";
 import axios from "axios";
-
+import LaptopMacIcon from '@mui/icons-material/LaptopMac';
+import GroupsIcon from '@mui/icons-material/Groups';
 import { toast, ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
-
+import PersonIcon from '@mui/icons-material/Person';
 const darkTheme = createTheme({
   palette: {
     mode: "dark",
@@ -226,7 +227,7 @@ function App() {
             className="proposal-title"
             style={{ color: "White", marginBottom: "0px" }}
           >
-            Timeline{" "}
+            Overview{" "}
           </h3>
 
           <VerticalTimeline className="vertical-timeline">
@@ -236,25 +237,79 @@ function App() {
                 background: "#fff",
                 color: "white",
                 boxShadow: "0 3px 0 #2196f3",
-                textAlign: "left",
+                textAlign: "left"
               }}
               contentArrowStyle={{ borderRight: "7px solid #fff" }}
               date="Round 1"
               iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
+              icon={<LaptopMacIcon fontSize="100px"/>}
             >
               <div style={{ color: "rgb(48 48 48)" }}>
                 <h3 className="vertical-timeline-element-title">
-                  Lorem, ipsum dolor.
+                Technical Round 
                 </h3>
                 <h4 className="vertical-timeline-element-subtitle">
-                  Lorem, ipsum.
+                (Online)
                 </h4>
                 <p>
-                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam, natus!
+                Tasks are allotted to each vertical to be completed in a fixed duration of a time interval. Round 1 tasks are to be submitted online through google forms.
                 </p>
               </div>
             </VerticalTimelineElement>
             <VerticalTimelineElement
+              className="vertical-timeline-element--work"
+              contentStyle={{
+                background: "#fff",
+                color: "white",
+                boxShadow: "0 3px 0 #2196f3",
+                textAlign: "left",
+              }}
+           
+              contentArrowStyle={{ borderRight: "7px solid #fff" }}
+              date="Round 2"
+              iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff"}}
+              icon={<GroupsIcon />}
+              
+            >
+              <div style={{ color: "rgb(48 48 48)" }}>
+                <h3 className="vertical-timeline-element-title">
+                Interview Round
+                </h3>
+                <h4 className="vertical-timeline-element-subtitle">
+                (Offline)
+
+                </h4>
+                <p>
+                After qualification of the first round, offline interviews are organized by the team E-Cell to test the prompt skills of candidates, management, and ability to deal with work under pressure with tasks and situations allotted at hand.
+                </p>
+              </div>
+            </VerticalTimelineElement>
+            <VerticalTimelineElement
+              className="vertical-timeline-element--work"
+              contentStyle={{
+                background: "#fff",
+                color: "white",
+                boxShadow: "0 3px 0 #2196f3",
+                textAlign: "left",
+              }}
+              contentArrowStyle={{ borderRight: "7px solid #fff" }}
+              date="Round 3"
+              icon={<PersonIcon/>}
+              iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
+            >
+              <div style={{ color: "rgb(48 48 48)" }}>
+                <h3 className="vertical-timeline-element-title">
+                HR Interview round
+                </h3>
+                <h4 className="vertical-timeline-element-subtitle">
+                (Offline)
+                </h4>
+                <p>
+                Qualifiers from round 2 are put to the final test with the HR Interview rounds conducted offline. Dedication and perseverance to take society and its events to their highest potential are examined for the final selections.
+                </p>
+              </div>
+            </VerticalTimelineElement>
+            {/* <VerticalTimelineElement
               className="vertical-timeline-element--work"
               contentStyle={{
                 background: "#fff",
@@ -301,55 +356,7 @@ function App() {
                   Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam, natus!
                 </p>
               </div>
-            </VerticalTimelineElement>
-            <VerticalTimelineElement
-              className="vertical-timeline-element--work"
-              contentStyle={{
-                background: "#fff",
-                color: "white",
-                boxShadow: "0 3px 0 #2196f3",
-                textAlign: "left",
-              }}
-              contentArrowStyle={{ borderRight: "7px solid #fff" }}
-              date="2011 - present"
-              iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
-            >
-              <div style={{ color: "rgb(48 48 48)" }}>
-                <h3 className="vertical-timeline-element-title">
-                  Lorem, ipsum dolor.
-                </h3>
-                <h4 className="vertical-timeline-element-subtitle">
-                  Lorem, ipsum.
-                </h4>
-                <p>
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam, natus!
-                </p>
-              </div>
-            </VerticalTimelineElement>
-            <VerticalTimelineElement
-              className="vertical-timeline-element--work"
-              contentStyle={{
-                background: "#fff",
-                color: "white",
-                boxShadow: "0 3px 0 #2196f3",
-                textAlign: "left",
-              }}
-              contentArrowStyle={{ borderRight: "7px solid #fff" }}
-              date="2011 - present"
-              iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
-            >
-              <div style={{ color: "rgb(48 48 48)" }}>
-                <h3 className="vertical-timeline-element-title">
-                  Lorem, ipsum dolor.
-                </h3>
-                <h4 className="vertical-timeline-element-subtitle">
-                  Lorem, ipsum.
-                </h4>
-                <p>
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam, natus!
-                </p>
-              </div>
-            </VerticalTimelineElement>
+            </VerticalTimelineElement> */}
           </VerticalTimeline>
         </section>
         <section id="section-4" style={{ width: "100vw" }}>
@@ -770,7 +777,7 @@ theme="colored"
                     style={{ color: "#f5f5f5d6" }}
                     gutterBottom
                   >
-                    By Clicking Apply you agree to our Terms and Conditions
+                    By Clicking Apply you comply with our Rules and Regulations
                   </Typography>
 
                   <LoadingButton
