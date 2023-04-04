@@ -364,7 +364,7 @@ function App() {
             <h3 className="proposal-title">Verticals </h3>
             <div className="proposal-row1">
               <div className="proposal-box wow animate__animated animate__fadeIn">
-                <p className="box-title ">Sponsorship</p>
+                <p className="box-title ">Sponsorship Executive</p>
                 <p className="box-text-2">
                   Sponsorship executives who are a part of E-Cell are
                   responsible for securing financial support and partnerships
@@ -825,7 +825,7 @@ theme="colored"
               The first round shall be online where all participants will be
               given a task according to their verticals. Participants who clear
               this round shall advance to the offline interview round. The
-              participants who advance this round shall face an HR interview
+              participants who advance the offline interview round shall face an HR interview
               round.
             </p>
             <p className="ans">
