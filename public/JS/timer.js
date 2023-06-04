@@ -1,7 +1,7 @@
 
 // 11th June 2019, 5:23:59am, Local Time
 // new Date(2019, 5, 11, 5, 23, 59)
-const newDate = new Date(2023, 7, 10, 24, 00, 00).getTime()
+const newDate = new Date(2023, 6, 10, 24, 00, 00).getTime()
 const countdown = setInterval(() =>{
   
 const date = new Date().getTime()
