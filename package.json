@@ -1,5 +1,6 @@
 {
   "name": "hostinger-react",
+  "homepage":"https://shrish-nitb.github.io/Recruitment-Manager-Frontend/",
   "version": "1.0.0",
   "description": "my react application",
   "private": true,
@@ -30,9 +31,12 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "predeploy" : "npm run build",
+"deploy" : "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
+    
   },
   "eslintConfig": {
     "extends": [
@@ -51,5 +55,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^5.0.0"
   }
 }
